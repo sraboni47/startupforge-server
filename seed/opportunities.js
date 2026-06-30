@@ -1,7 +1,3 @@
-
-
-
-
 const opportunities = [
   {
     id: 1,
@@ -201,4 +197,4 @@ const opportunities = [
   },
 ];
 
-module.exports = opportunities;
+export default opportunities;

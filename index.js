@@ -1,19 +1,17 @@
-const express = require("express");
-const cors = require("cors");
-const dotenv = require("dotenv");
+import express from "express";
+import cors from "cors";
+import dotenv from "dotenv";
 
-const { connectDB } = require("./config/db");
+import { connectDB } from "./config/db.js";
 
-const opportunityRoutes = require("./routes/opportunity.routes");
-const applicationRoutes = require("./routes/application.routes");
-const userRoutes = require("./routes/user.routes");
-const authRoutes = require("./routes/auth.routes");
-const seedRoutes = require("./routes/seed.routes");
-const startupRoutes = require("./routes/startup.routes");
+import opportunityRoutes from "./routes/opportunity.routes.js";
+import applicationRoutes from "./routes/application.routes.js";
+import userRoutes from "./routes/user.routes.js";
+import authRoutes from "./routes/auth.routes.js";
+import seedRoutes from "./routes/seed.routes.js";
+import startupRoutes from "./routes/startup.routes.js";
 
 dotenv.config();
-
-
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -23,7 +21,7 @@ app.use(
   cors({
     origin: "http://localhost:3000",
     credentials: true,
-  }),
+  })
 );
 
 app.use(express.json());
@@ -48,7 +46,7 @@ async function startServer() {
 
     app.listen(PORT, () => {
       console.log(
-        `🚀 StartupForge Server is running on http://localhost:${PORT}`,
+        `🚀 StartupForge Server is running on http://localhost:${PORT}`
       );
     });
   } catch (error) {

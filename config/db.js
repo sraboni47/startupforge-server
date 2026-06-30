@@ -1,10 +1,7 @@
+import dotenv from "dotenv";
+import { MongoClient, ServerApiVersion } from "mongodb";
 
-
-require("dotenv").config();
-
-const { MongoClient, ServerApiVersion } = require("mongodb");
-
-
+dotenv.config();
 
 const uri = process.env.MONGODB_URI;
 
@@ -28,7 +25,4 @@ async function connectDB() {
   }
 }
 
-module.exports = {
-  client,
-  connectDB,
-};
+export { client, connectDB };

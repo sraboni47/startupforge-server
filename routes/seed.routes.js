@@ -1,16 +1,12 @@
-
-
-
-const express = require("express");
-const { client } = require("../config/db");
+import express from "express";
+import { client } from "../config/db.js";
+import opportunities from "../seed/opportunities.js";
 
 const router = express.Router();
 
 const opportunityCollection = client
   .db("startupforgeDB")
   .collection("opportunities");
-
-const opportunities = require("../seed/opportunities");
 
 router.get("/", async (req, res) => {
   try {
@@ -27,4 +23,4 @@ router.get("/", async (req, res) => {
   }
 });
 
-module.exports = router;
+export default router;

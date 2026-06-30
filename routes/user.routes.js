@@ -1,8 +1,5 @@
-
-
-
-const express = require("express");
-const { client } = require("../config/db");
+import express from "express";
+import { client } from "../config/db.js";
 
 const router = express.Router();
 
@@ -61,4 +58,4 @@ router.put("/", async (req, res) => {
   }
 });
 
-module.exports = router;
+export default router;

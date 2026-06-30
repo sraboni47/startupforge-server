@@ -1,10 +1,6 @@
-
-
-
-
-const express = require("express");
-const { ObjectId } = require("mongodb");
-const { client } = require("../config/db");
+import express from "express";
+import { ObjectId } from "mongodb";
+import { client } from "../config/db.js";
 
 const router = express.Router();
 
@@ -69,7 +65,7 @@ router.put("/:id", async (req, res) => {
       { _id: new ObjectId(id) },
       {
         $set: startup,
-      },
+      }
     );
 
     res.send(result);
@@ -99,4 +95,4 @@ router.delete("/:id", async (req, res) => {
   }
 });
 
-module.exports = router;
+export default router;
