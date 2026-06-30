@@ -1,6 +1,18 @@
+import { createRequire } from "module";
+const require = createRequire(import.meta.url);
+
+
+
+
+
+
+
+
 require("dotenv").config();
 
 const { MongoClient, ServerApiVersion } = require("mongodb");
+
+
 
 const uri = process.env.MONGODB_URI;
 
