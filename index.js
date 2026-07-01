@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
-
+import cookieParser from "cookie-parser";
 import { connectDB } from "./config/db.js";
 
 import opportunityRoutes from "./routes/opportunity.routes.js";
@@ -36,6 +36,7 @@ app.use("/applications", applicationRoutes);
 app.use("/users", userRoutes);
 app.use("/seed", seedRoutes);
 app.use("/startups", startupRoutes);
+app.use(cookieParser());
 
 // Root Route
 app.get("/", (req, res) => {
